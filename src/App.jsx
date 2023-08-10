@@ -103,6 +103,18 @@ export default function App() {
             </Grid>
           </Box>
           <Box pt={5} pb={5}>
+            <Typography p={2} mt={3} variant="h3">About</Typography>
+            <Grid  container spacing={2}> 
+              <Grid item xs={12}>
+                <Typography mt={2} variant='h5'>Hi, My careers was starting Intern to Full time Mern stack developer of web developement. And technical gainer from MEDIUM, DEV COMMUNITY articles using to day by day grow my skillsets.  Apart from coding, I have knowledge on stocks & commodity market and digitalized currencies like crypto trading, and collabrate with stock market enthusiam peoples. My expertise is next level of build to own product AI Usings to market analysing in daily basis.</Typography>
+                <Typography mt={2} variant='h5'>Short term trader & Evening person of market analysis</Typography>
+                <Typography mt={2} variant='h5'>Player of Snooker on weekend</Typography>
+                <Typography mt={2} variant='h5'>Movie Buff on Weekend</Typography>
+                <Typography mt={2} variant='h5'>Fiction Book reader at power shutDown on daytime</Typography>
+              </Grid>
+            </Grid>
+          </Box>
+          <Box pt={5} pb={5}>
             <Typography p={2} mt={3} variant="h3">Skills In Tech</Typography>
             <Grid pt={3} pb={3} container spacing={2}>
               <Grid item xs={2}>
@@ -214,7 +226,6 @@ export default function App() {
             <Typography variant='h5'>Let's Work Together!</Typography>
             <Typography>saravananaks97@gmail.com</Typography>
             <Typography>+919487013219</Typography>
-            <Typography>Outside of codingPersonal Touch:</Typography>
           </Box>  
           <Box pt={5} pb={5} className={classes.footer}>
             <Box>
@@ -223,7 +234,7 @@ export default function App() {
               <Link pl={2} href='https://twitter.com/SaravananAks219'><TwitterIcon color="action" /></Link>
             </Box>
             <Typography mt={1} variant="body2" color="textSecondary">
-              © {new Date().getFullYear()} PORTFLEO. All rights reserved.
+              © {new Date().getFullYear()} PORTFOLIO. All rights reserved.
             </Typography>
             {/* <Typography variant="body2" color="textSecondary">
               Created with ❤️ using React and Material-UI
