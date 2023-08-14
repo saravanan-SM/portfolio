@@ -6,7 +6,11 @@ export const useStyles = makeStyles(( theme ) => ({
       backgroundColor: '#1ed760',
       width: '400px !important',
       height: '400px',
-      // margin: '0 auto',
+    },
+    alignHeight: {
+      minHeight: 'calc(100vh - 90px)',
+      display: 'flex',
+      alignItems: 'center'
     },
     alignCenter: {
       display: 'flex',
@@ -40,13 +44,26 @@ export const useStyles = makeStyles(( theme ) => ({
     },
     skillText: {
       textAlign: 'center',
-      marginTop: '17px !important',
+      margin: '17px 0px !important',
       fontSize: '18px !important'
     },
     footer: {
       textAlign: 'center',
       borderTop: '2px solid #1d1c1c'
     },
+    contactCard: {
+      padding: '20px',
+      textAlign: 'center',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    contactIcon: {
+      marginRight: '10px !important'
+    },
+    contact: {
+      color: '#EDEDED'
+    }
     // socialMedia: {
       
     // },

@@ -2,24 +2,44 @@ import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Typography, Button, Box, Container, Toolbar, Link,
-  Grid, CardMedia, CardContent, } from '@mui/material';
+  Grid, Card, CardMedia, CardContent, } from '@mui/material';
 import { useStyles } from './styles/styles';
 import profile from './images/profile.png';
-import nodejs from './images/nodejs-logo.png';
-import express from './images/expressjs-logo.png';
-import react from './images/react-logo.png';
-import mongodb from './images/MongoDB-logo.jpg';
-import postgresql from './images/postgresql-logo.png';
-import redis from './images/redis-logo.png';
-import rabbitmq from './images/rabbitmq-logo.png';
-import socket from './images/socket-io.png';
-import html5 from './images/html5-logo.png';
-import css3 from './images/css3.png';
+import NodeJs from './images/nodejs-logo.png';
+import Express from './images/expressjs-logo.png';
+import ReactJs from './images/react-logo.png';
+import MongoDB from './images/MongoDB-logo.jpg';
+import PostgreSQL from './images/postgresql-logo.png';
+import Redis from './images/redis-logo.png';
+import RabbitMQ from './images/rabbitmq-logo.png';
+import Socket from './images/socket-io.png';
+import Html5 from './images/html5-logo.png';
+import Css3 from './images/css3.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import MailIcon from '@mui/icons-material/Mail';
+import { Element, scroller } from 'react-scroll';
+import { gsap } from 'gsap';
+// import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 const darkTheme = createTheme({
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#EDEDED',
+          textDecoration: 'none',
+          '&:hover': {
+            color: '#1ed760',
+            textDecoration: 'none',
+          },
+        },
+        
+      },
+    },
+  },
   palette: {
     mode: 'dark',
     primary: {
@@ -49,8 +69,36 @@ const darkTheme = createTheme({
 
 });
 
+
 export default function App() {
   const classes = useStyles();
+
+  const scrollToSection = (section) => {
+    scroller.scrollTo(section, {
+      duration: 1000,
+      smooth: 'easeInOutQuart',
+      // offset: -50,
+    });
+  }
+
+  // Skill Section
+  let skillImages = [NodeJs, Express, ReactJs, MongoDB, PostgreSQL, Redis, RabbitMQ,
+    Socket, Html5, Css3 ]
+  let skill = ['Node.js', 'Express', 'React.js', 'MongoDB', 'PostgreSQL', 'Redis', 'RabbitMQ',
+    'Socket.io', 'Html5', 'Css3' ]
+  const gridItems = skillImages.map((ele, index) => (
+    <Grid key={index} item xs={12} sm={12} md={3} lg={2}>
+      <Box className={classes.logoBackground}>
+        <CardMedia className={classes.skillLogo}
+          component="img"
+          image= {ele}
+          alt={ele}
+        />
+      </Box>
+      <Typography className={classes.skillText}>{skill[index]}</Typography>
+    </Grid>
+  ));
+  
   return (
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
@@ -75,169 +123,110 @@ export default function App() {
               </Grid>
             </Grid>
           </Toolbar>
-          <Box pt={5} pb={5}>
-            <Grid  container spacing={2}> 
-              <Grid m={'auto'} item xs={6}>
-                <Box m={'auto'} pt={5} pb={5} >
-                  <CardContent p={5}>
-                    <Typography variant='h2'>Hi Folks.,</Typography>
-                    <Typography mb={2} variant='h2'>I'm Saravanan</Typography>
-                    <Typography className={classes.cardContent} variant='h6'>Full stack Software Engineer based in chennai, India.</Typography>
-                    <Typography className={classes.cardContent} variant='h6'>I have 2.5 years experience on React and Nodejs.</Typography>
-                    <Box pt={2}>
-                      <Button variant="contained">Contact Me</Button>
-                    </Box>
-                    <Typography mt={2} variant='h5'>Software Engineer - Full Time</Typography>
-                  </CardContent>
-                </Box>
+          <Element name="parallax-section" className={classes.alignHeight}>
+              <Grid container > 
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}> 
+                  <Box  pt={5} pb={5} >
+                    <CardContent  p={5}>
+                      <Typography variant='h2'>Hi Folks,{'\u{1F44B}'}</Typography>
+                      <Typography mb={2} variant='h2'>I'm Saravanan</Typography>
+                      <Typography className={classes.cardContent} variant='h6'>Full stack Software Engineer based in chennai, India.</Typography>
+                      <Typography className={classes.cardContent} variant='h6'>I have 2.5 years experience on React and Nodejs.</Typography>
+                      <Box pt={2}>
+                        <Button onClick={() => scrollToSection('contact')} variant="contained" >Contact Me</Button>
+                      </Box>
+                      <Typography mt={2} variant='h5'>Software Engineer - Full Time</Typography>
+                    </CardContent>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                  <Box pt={5} pb={5} className={classes.alignCenter}>
+                    <CardMedia className={classes.roundedMedia}
+                      component="img"
+                      image= {profile}
+                      alt="profile"
+                    />
+                  </Box>
+                </Grid>
               </Grid>
-              <Grid item xs={6}>
-                <Box pt={5} pb={5} className={classes.alignCenter}>
-                  <CardMedia className={classes.roundedMedia}
-                    component="img"
-                    image= {profile}
-                    alt="profile"
-                  />
-                </Box>
-              </Grid>
-            </Grid>
-          </Box>
-          <Box pt={5} pb={5}>
-            <Typography p={2} mt={3} variant="h3">About</Typography>
-            <Grid  container spacing={2}> 
+          </Element>
+          <Element className={classes.alignHeight} pt={5} pb={5}>
+            <Grid container spacing={2}> 
               <Grid item xs={12}>
-                <Typography mt={2} variant='h5'>Hi, My careers was starting Intern to Full time Mern stack developer of web developement. And technical gainer from MEDIUM, DEV COMMUNITY articles using to day by day grow my skillsets.  Apart from coding, I have knowledge on stocks & commodity market and digitalized currencies like crypto trading, and collabrate with stock market enthusiam peoples. My expertise is next level of build to own product AI Usings to market analysing in daily basis.</Typography>
-                <Typography mt={2} variant='h5'>Short term trader & Evening person of market analysis</Typography>
-                <Typography mt={2} variant='h5'>Player of Snooker on weekend</Typography>
-                <Typography mt={2} variant='h5'>Movie Buff on Weekend</Typography>
-                <Typography mt={2} variant='h5'>Fiction Book reader at power shutDown on daytime</Typography>
+                <Typography p={2} mt={3} variant="h2">About</Typography>
+                <Typography pl={2} pr={2} mt={2} variant='h6'>{'\u{1F4BB}'} - My career was starting Intern to a Full-time Mern stack developer of web development.</Typography>
+                <Typography pl={2} pr={2} mt={2} variant='h6'>{'\u{1F4B0}'} - Apart from coding, I know about stocks & commodity markets and digitalized currencies like crypto trading and collaborate with stock market enthusiast peoples.</Typography>
+                <Typography pl={2} pr={2} mt={2} variant='h6'>{'\u{1F3AF}'} - My expertise is the next level of build-to-own product AI usings to market analysis on daily basis.</Typography>
+                <Typography pl={2} pr={2} mt={2} variant='h6'>{'\u{1F4AA}'} - Full-time coder & Short term trader.</Typography>
+                <Typography pl={2} pr={2} mt={2} variant='h6'>{'\u{1F3AE}'} - Player of Snooker on weekend.</Typography>
+                <Typography pl={2} pr={2} mt={2} variant='h6'>{'\u270C'} - Fiction Book{'\u{1F4DA}'} reader &  Movie{'\u{1F3A5}'} Buff on Weekend.</Typography>
+                <Typography pl={2} pr={2} mt={2} variant='h6'></Typography>
               </Grid>
             </Grid>
-          </Box>
-          <Box pt={5} pb={5}>
-            <Typography p={2} mt={3} variant="h3">Skills In Tech</Typography>
-            <Grid pt={3} pb={3} container spacing={2}>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {nodejs}
-                    alt="nodejs"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>Node.js</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {express}
-                    alt="express"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>Express.js</Typography>
-              </Grid>
-              <Grid  item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {react}
-                    alt="react"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>React.js</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {mongodb}
-                    alt="mongodb"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>MongoDB</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {postgresql}
-                    alt="postgresql"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>PostgreSQL</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {redis}
-                    alt="redis"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>Redis</Typography>
-              </Grid>
-            </Grid>
-            <Grid pt={3} pb={3} container spacing={2}>
-              <Grid  item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {rabbitmq}
-                    alt="rabbitmq"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>RabbitMQ</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {socket}
-                    alt="socket"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>Socket.io</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {html5}
-                    alt="html5"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>HTML</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Box className={classes.logoBackground}>
-                  <CardMedia className={classes.skillLogo}
-                    component="img"
-                    image= {css3}
-                    alt="css3"
-                  />
-                </Box>
-                <Typography className={classes.skillText}>CSS</Typography>
-              </Grid>
-            </Grid>
-          </Box>
-          <Box pt={5} pb={5}>
-            <Typography variant="h3">Contact</Typography>
-            <Typography variant='h5'>Let's Work Together!</Typography>
-            <Typography>saravananaks97@gmail.com</Typography>
-            <Typography>+919487013219</Typography>
-          </Box>  
-          <Box pt={5} pb={5} className={classes.footer}>
+          </Element>
+          <Element className={classes.alignHeight} pt={5} pb={5}>
             <Box>
-              <Link pr={2} href='https://github.com/saravananaks97'><GitHubIcon color="action" /></Link>
-              <Link pl={2} pr={2} href='https://linkedin.com/in/saravanan-aks'><LinkedInIcon color="action" /></Link>
-              <Link pl={2} href='https://twitter.com/SaravananAks219'><TwitterIcon color="action" /></Link>
+              <Typography p={2} mt={3} variant="h2">Skills In Tech</Typography>
+              <Grid pt={3} pb={3} container spacing={2}>
+                {gridItems}
+              </Grid>
+            </Box>
+          </Element>
+          <Element name="contact" className={classes.alignHeight} pt={5} pb={5}>
+            <Box pt={3} pl={5}> 
+            <Typography variant="h2">Contact</Typography>
+              <Typography mb={3} textAlign='center' variant='h4'>Get In touch{'\u{1F44B}'}</Typography>
+              {/* <Typography mt={1} variant='h4'></Typography> */}
+              <Grid className={classes.alignCenter} container spacing={2}>
+                <Grid p={2} item xs={4}>
+                  <Card className={classes.contactCard}>
+                    <MailIcon className={classes.contactIcon} color="action" />
+                    <Link  className={classes.contact} href='#'>saravananaks97@gmail.com</Link>
+                  </Card>
+                </Grid>
+                <Grid p={2} item xs={4}>
+                  <Card className={classes.contactCard}>
+                    <PhoneIphoneIcon className={classes.contactIcon} color="action" />
+                    <Link className={classes.contact} href='#'>+919487013219</Link>
+                    {/* <ContentCopyIcon /> */}
+                  </Card>
+                </Grid>
+                <Grid p={2} item xs={8}>
+                  <Card className={classes.contactCard}>
+                    <Typography className={classes.contactIcon}>Github -</Typography>
+                    <Link className={classes.contact} target="_blank" href='https://github.com/saravanan-SM'>https://github.com/saravanan-SM</Link>
+                  </Card>
+                </Grid>
+                <Grid p={2} item xs={8}>
+                  <Card className={classes.contactCard}>
+                    <Typography className={classes.contactIcon}>LinkedIn -</Typography>
+                    <Link className={classes.contact}  href='https://linkedin.com/in/saravanan-aks'>https://linkedin.com/in/saravanan-aks</Link>
+                  </Card>
+                </Grid>
+                <Grid p={2} item xs={8}>
+                  <Card className={classes.contactCard}>
+                    <Typography className={classes.contactIcon}>Twitter -</Typography>
+                    <Link className={classes.contact}  href='https://twitter.com/SaravananAks219'>https://twitter.com/SaravananAks219</Link>
+                  </Card>
+                </Grid>
+                
+              </Grid>
+              
+              {/* <Typography>{''}saravananaks97@gmail.com</Typography> */}
+              {/* <Typography>+919487013219</Typography> */}
+            </Box>
+          </Element>  
+          <Box  pt={5} pb={5} className={classes.footer}>
+            <Box>
+              <Link pr={2} target="_blank" href='https://github.com/saravanan-SM'><GitHubIcon color="action" /></Link>
+              <Link pl={2} pr={2} target="_blank" href='https://linkedin.com/in/saravanan-aks'><LinkedInIcon color="action" /></Link>
+              <Link pl={2} target="_blank" href='https://twitter.com/SaravananAks219'><TwitterIcon color="action" /></Link>
             </Box>
             <Typography mt={1} variant="body2" color="textSecondary">
               © {new Date().getFullYear()} PORTFOLIO. All rights reserved.
             </Typography>
             {/* <Typography variant="body2" color="textSecondary">
-              Created with ❤️ using React and Material-UI
+              Created with ❤️ using {'\u{1F44B}'} React and Material-UI
             </Typography> */}
           </Box>
         </Container>
