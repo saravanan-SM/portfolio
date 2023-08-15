@@ -1,10 +1,11 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Typography, Button, Box, Container, Toolbar, Link,
+import { Typography, Button, Box, Container, Toolbar,
   Grid, Card, CardMedia, CardContent, } from '@mui/material';
 import { useStyles } from './styles/styles';
 import profile from './images/profile.png';
+import logo from './images/logo.svg';
 import NodeJs from './images/nodejs-logo.png';
 import Express from './images/expressjs-logo.png';
 import ReactJs from './images/react-logo.png';
@@ -20,8 +21,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import MailIcon from '@mui/icons-material/Mail';
-import { Element, scroller } from 'react-scroll';
-import { gsap } from 'gsap';
+import { Link, scroller } from 'react-scroll';
+// import { gsap } from 'gsap';
 // import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 const darkTheme = createTheme({
@@ -80,7 +81,6 @@ export default function App() {
       // offset: -50,
     });
   }
-
   // Skill Section
   let skillImages = [NodeJs, Express, ReactJs, MongoDB, PostgreSQL, Redis, RabbitMQ,
     Socket, Html5, Css3 ]
@@ -106,24 +106,28 @@ export default function App() {
           <Toolbar sx={{ padding: '24px', borderBottom: '2px solid #1d1c1c' }}>
             <Grid container spacing={2}>
               <Grid item xs={3}>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  Portfolio
-                </Typography>
+              <CardMedia className={classes.logo}
+                component="img"
+                image= {logo}
+                alt={logo}
+              />
               </Grid>
-              <Grid item xs={6} className={classes.alignCenter}>
-                <Link pr={2} href="/" className={classes.link}>Home</Link>
-                <Link pl={2} pr={2} href="/about" className={classes.link}>About</Link>
-                <Link pl={2} pr={2} href="/about" className={classes.link}>Skills</Link>
-                <Link pl={2} href="/contact" className={classes.link}>Contact</Link>
+              <Grid m={'auto'} item xs={6}>
+                <div className={classes.alignLinkCenter}>
+                  <Link className={classes.navLink} to="hero" smooth>Home</Link>
+                  <Link className={classes.navLink} to="about" smooth>About</Link>
+                  <Link className={classes.navLink} to="skills" smooth>Skills</Link>
+                  <Link className={classes.navLink} to="contact" smooth >Contact</Link>
+                </div>
               </Grid>
               <Grid item xs={3} className={classes.navButton}>
                 <Box pl={2}>
-                  <Button variant="contained">Hire Me</Button>
+                  <Button smooth={true} onClick={() => scrollToSection('contact')} variant="contained">Hire Me</Button>
                 </Box>
               </Grid>
             </Grid>
           </Toolbar>
-          <Element name="parallax-section" className={classes.alignHeight}>
+          <section className={classes.alignHeight}>
               <Grid container > 
                 <Grid item xs={12} sm={12} md={6} lg={6} xl={6}> 
                   <Box  pt={5} pb={5} >
@@ -133,7 +137,7 @@ export default function App() {
                       <Typography className={classes.cardContent} variant='h6'>Full stack Software Engineer based in chennai, India.</Typography>
                       <Typography className={classes.cardContent} variant='h6'>I have 2.5 years experience on React and Nodejs.</Typography>
                       <Box pt={2}>
-                        <Button onClick={() => scrollToSection('contact')} variant="contained" >Contact Me</Button>
+                      <Button onClick={() => scrollToSection('contact')} variant="contained" >Contact Me</Button>
                       </Box>
                       <Typography mt={2} variant='h5'>Software Engineer - Full Time</Typography>
                     </CardContent>
@@ -149,8 +153,8 @@ export default function App() {
                   </Box>
                 </Grid>
               </Grid>
-          </Element>
-          <Element className={classes.alignHeight} pt={5} pb={5}>
+          </section>
+          <section id='about' className={classes.alignHeight} pt={5} pb={5}>
             <Grid container spacing={2}> 
               <Grid item xs={12}>
                 <Typography p={2} mt={3} variant="h2">About</Typography>
@@ -163,50 +167,49 @@ export default function App() {
                 <Typography pl={2} pr={2} mt={2} variant='h6'></Typography>
               </Grid>
             </Grid>
-          </Element>
-          <Element className={classes.alignHeight} pt={5} pb={5}>
+          </section>
+          <section id='skills' className={classes.alignHeight} pt={5} pb={5}>
             <Box>
               <Typography p={2} mt={3} variant="h2">Skills In Tech</Typography>
               <Grid pt={3} pb={3} container spacing={2}>
                 {gridItems}
               </Grid>
             </Box>
-          </Element>
-          <Element name="contact" className={classes.alignHeight} pt={5} pb={5}>
+          </section>
+          <section name="contact" id="contact" className={classes.alignHeight} pt={5} pb={5}>
             <Box pt={3} pl={5}> 
             <Typography variant="h2">Contact</Typography>
-              <Typography mb={3} textAlign='center' variant='h4'>Get In touch{'\u{1F44B}'}</Typography>
-              {/* <Typography mt={1} variant='h4'></Typography> */}
+              <Typography mb={3} textAlign='center' variant='h4'>Get in touch{'\u{1F44B}'}</Typography>
               <Grid className={classes.alignCenter} container spacing={2}>
                 <Grid p={2} item xs={4}>
                   <Card className={classes.contactCard}>
                     <MailIcon className={classes.contactIcon} color="action" />
-                    <Link  className={classes.contact} href='#'>saravananaks97@gmail.com</Link>
+                    <Link className={classes.link} to='#'>saravananaks97@gmail.com</Link>
                   </Card>
                 </Grid>
                 <Grid p={2} item xs={4}>
                   <Card className={classes.contactCard}>
                     <PhoneIphoneIcon className={classes.contactIcon} color="action" />
-                    <Link className={classes.contact} href='#'>+919487013219</Link>
+                    <Link className={classes.link} to='hero'>+919487013219</Link>
                     {/* <ContentCopyIcon /> */}
                   </Card>
                 </Grid>
                 <Grid p={2} item xs={8}>
                   <Card className={classes.contactCard}>
                     <Typography className={classes.contactIcon}>Github -</Typography>
-                    <Link className={classes.contact} target="_blank" href='https://github.com/saravanan-SM'>https://github.com/saravanan-SM</Link>
+                    <a className={classes.link} target='blank' href ='https://github.com/saravanan-SM'>https://github.com/saravanan-SM</a>
                   </Card>
                 </Grid>
                 <Grid p={2} item xs={8}>
                   <Card className={classes.contactCard}>
                     <Typography className={classes.contactIcon}>LinkedIn -</Typography>
-                    <Link className={classes.contact}  href='https://linkedin.com/in/saravanan-aks'>https://linkedin.com/in/saravanan-aks</Link>
+                    <a className={classes.link} target='blank' href ='https://linkedin.com/in/saravanan-aks'>https://linkedin.com/in/saravanan-aks</a>
                   </Card>
                 </Grid>
                 <Grid p={2} item xs={8}>
                   <Card className={classes.contactCard}>
                     <Typography className={classes.contactIcon}>Twitter -</Typography>
-                    <Link className={classes.contact}  href='https://twitter.com/SaravananAks219'>https://twitter.com/SaravananAks219</Link>
+                    <a className={classes.link} target='blank' href='https://twitter.com/SaravananAks219'>https://twitter.com/SaravananAks219</a>
                   </Card>
                 </Grid>
                 
@@ -215,12 +218,12 @@ export default function App() {
               {/* <Typography>{''}saravananaks97@gmail.com</Typography> */}
               {/* <Typography>+919487013219</Typography> */}
             </Box>
-          </Element>  
+          </section>  
           <Box  pt={5} pb={5} className={classes.footer}>
             <Box>
-              <Link pr={2} target="_blank" href='https://github.com/saravanan-SM'><GitHubIcon color="action" /></Link>
-              <Link pl={2} pr={2} target="_blank" href='https://linkedin.com/in/saravanan-aks'><LinkedInIcon color="action" /></Link>
-              <Link pl={2} target="_blank" href='https://twitter.com/SaravananAks219'><TwitterIcon color="action" /></Link>
+              <a className={classes.footerLink} target="blank" href='https://github.com/saravanan-SM'><GitHubIcon color="action" /></a>
+              <a className={classes.footerLink} target="blank" href='https://linkedin.com/in/saravanan-aks'><LinkedInIcon color="action" /></a>
+              <a className={classes.footerLink} target="blank" href='https://twitter.com/SaravananAks219'><TwitterIcon color="action" /></a>
             </Box>
             <Typography mt={1} variant="body2" color="textSecondary">
               © {new Date().getFullYear()} PORTFOLIO. All rights reserved.
