@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/saravanan-SM.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -30,7 +31,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/saravanan-SM/saravanan-SM.github.io",
   "eslintConfig": {
     "extends": [
       "react-app",
