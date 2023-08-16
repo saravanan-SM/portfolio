@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/css/main.01000e71.css",
-    "main.js": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/js/main.4ffe05d0.js",
-    "static/js/787.1ed0c42c.chunk.js": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/js/787.1ed0c42c.chunk.js",
-    "static/media/profile.png": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/profile.7891b17f31f85051587e.png",
-    "static/media/socket-io.png": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/socket-io.4f664faab4565cd1f386.png",
-    "static/media/postgresql-logo.png": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/postgresql-logo.4a8c66c90ba3b5e27f7c.png",
-    "static/media/nodejs-logo.png": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/nodejs-logo.e328955d6bbbf3ebc72b.png",
-    "static/media/MongoDB-logo.jpg": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/MongoDB-logo.b9e24b8bb2aef42f7ee6.jpg",
-    "static/media/rabbitmq-logo.png": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/rabbitmq-logo.27f3f09a3d6475fe8c9e.png",
-    "static/media/expressjs-logo.png": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/expressjs-logo.e3d4f9e5c8b469e45838.png",
-    "index.html": "/saravanan-SM/saravanan-SM.github.io/portfolio/index.html",
-    "static/media/logo.svg": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/media/logo.3f489bb3fed180cf9711dcf782c5e3f8.svg",
-    "main.01000e71.css.map": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/css/main.01000e71.css.map",
-    "main.4ffe05d0.js.map": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/js/main.4ffe05d0.js.map",
-    "787.1ed0c42c.chunk.js.map": "/saravanan-SM/saravanan-SM.github.io/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/saravanan-SM/saravanan-SM.github.io/static/css/main.01000e71.css",
+    "main.js": "/saravanan-SM/saravanan-SM.github.io/static/js/main.e67b3dd6.js",
+    "static/js/787.1ed0c42c.chunk.js": "/saravanan-SM/saravanan-SM.github.io/static/js/787.1ed0c42c.chunk.js",
+    "static/media/profile.png": "/saravanan-SM/saravanan-SM.github.io/static/media/profile.7891b17f31f85051587e.png",
+    "static/media/socket-io.png": "/saravanan-SM/saravanan-SM.github.io/static/media/socket-io.4f664faab4565cd1f386.png",
+    "static/media/postgresql-logo.png": "/saravanan-SM/saravanan-SM.github.io/static/media/postgresql-logo.4a8c66c90ba3b5e27f7c.png",
+    "static/media/nodejs-logo.png": "/saravanan-SM/saravanan-SM.github.io/static/media/nodejs-logo.e328955d6bbbf3ebc72b.png",
+    "static/media/MongoDB-logo.jpg": "/saravanan-SM/saravanan-SM.github.io/static/media/MongoDB-logo.b9e24b8bb2aef42f7ee6.jpg",
+    "static/media/rabbitmq-logo.png": "/saravanan-SM/saravanan-SM.github.io/static/media/rabbitmq-logo.27f3f09a3d6475fe8c9e.png",
+    "static/media/expressjs-logo.png": "/saravanan-SM/saravanan-SM.github.io/static/media/expressjs-logo.e3d4f9e5c8b469e45838.png",
+    "index.html": "/saravanan-SM/saravanan-SM.github.io/index.html",
+    "static/media/logo.svg": "/saravanan-SM/saravanan-SM.github.io/static/media/logo.3f489bb3fed180cf9711dcf782c5e3f8.svg",
+    "main.01000e71.css.map": "/saravanan-SM/saravanan-SM.github.io/static/css/main.01000e71.css.map",
+    "main.e67b3dd6.js.map": "/saravanan-SM/saravanan-SM.github.io/static/js/main.e67b3dd6.js.map",
+    "787.1ed0c42c.chunk.js.map": "/saravanan-SM/saravanan-SM.github.io/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.01000e71.css",
-    "static/js/main.4ffe05d0.js"
+    "static/js/main.e67b3dd6.js"
   ]
 }
