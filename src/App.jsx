@@ -105,7 +105,7 @@ export default function App() {
         <Container maxWidth='lg' >
           <AppBar className={classes.Nav}>
             <Container>
-              <Toolbar  sx={{ padding: '24px', }}>
+              <Toolbar  sx={{ padding: '24px', borderBottom: '2px solid #1d1c1c'  }}>
                 <Grid container spacing={2}>
                   <Grid item xs={3}>
                   <CardMedia className={classes.logo}
@@ -140,8 +140,8 @@ export default function App() {
                       <Typography mb={2} variant='h2'>I'm Saravanan</Typography>
                       <Typography className={classes.cardContent} variant='h6'>Full stack Software Engineer based in chennai, India.</Typography>
                       <Typography className={classes.cardContent} variant='h6'>I have 2.5 years experience on React and Nodejs.</Typography>
-                      <Box pt={2}>
-                      <Button onClick={() => scrollToSection('contact')} variant="contained" >Contact Me</Button>
+                      <Box className={classes.alignLeft} pt={2}>
+                        <Button onClick={() => scrollToSection('contact')} variant="contained" >Contact Me</Button>
                       </Box>
                       <Typography mt={2} variant='h5'>Software Engineer - Full Time</Typography>
                     </CardContent>
@@ -216,24 +216,25 @@ export default function App() {
                     <a className={classes.link} target='blank' href='https://twitter.com/SaravananAks219'>https://twitter.com/SaravananAks219</a>
                   </Card>
                 </Grid>
-                
               </Grid>
             </Box>
           </section>  
-        </Container>
-        <Box pt={5} pb={5} className={classes.footer}>
-            <Box>
-              <a className={classes.footerLink} target="blank" href='https://github.com/saravanan-SM'><GitHubIcon color="action" /></a>
-              <a className={classes.footerLink} target="blank" href='https://linkedin.com/in/saravanan-aks'><LinkedInIcon color="action" /></a>
-              <a className={classes.footerLink} target="blank" href='https://twitter.com/SaravananAks219'><TwitterIcon color="action" /></a>
-            </Box>
+          <Box pt={3} pb={3} className={classes.footer}>
+                <Box>
+                <a className={classes.footerLink} target="blank" href='https://github.com/saravanan-SM'><GitHubIcon color="action" /></a>
+                <a className={classes.footerLink} target="blank" href='https://linkedin.com/in/saravanan-aks'><LinkedInIcon color="action" /></a>
+                <a className={classes.footerLink} target="blank" href='https://twitter.com/SaravananAks219'><TwitterIcon color="action" /></a>
+              </Box>
             <Typography mt={1} variant="body2" color="textSecondary">
               © {new Date().getFullYear()} PORTFOLIO. All rights reserved.
             </Typography>
             {/* <Typography variant="body2" color="textSecondary">
               Created with ❤️ using {'\u{1F44B}'} React and Material-UI
             </Typography> */}
-          </Box>
+              </Box>
+        </Container>
+        
+        
     </ThemeProvider>
   );  
 };

@@ -8,7 +8,7 @@ export const useStyles = makeStyles(( theme ) => ({
   Nav: {
     backgroundImage: 'None !important',
     boxShadow: 'none !important',
-    borderBottom: '2px solid #1d1c1c' 
+    position: 'sticky !important'
   },
   roundedMedia: {
     borderRadius: '50%',
@@ -20,8 +20,6 @@ export const useStyles = makeStyles(( theme ) => ({
     minHeight: 'calc(100vh - 95px)',
     display: 'flex',
     alignItems: 'center',
-    position: 'relative',
-    top: '95px'
   },
   alignCenter: {
     display: 'flex',
