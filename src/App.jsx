@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Typography, Button, Box, Container, Toolbar,
-  Grid, Card, CardMedia, CardContent, } from '@mui/material';
+  Grid, Card, CardMedia, CardContent, AppBar, } from '@mui/material';
 import { useStyles } from './styles/styles';
 import profile from './images/profile.png';
 import logo from './images/logo.svg';
@@ -103,31 +103,35 @@ export default function App() {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Container maxWidth='lg' >
-          <Toolbar sx={{ padding: '24px', borderBottom: '2px solid #1d1c1c' }}>
-            <Grid container spacing={2}>
-              <Grid item xs={3}>
-              <CardMedia className={classes.logo}
-                component="img"
-                image= {logo}
-                alt={logo}
-              />
-              </Grid>
-              <Grid m={'auto'} item xs={6}>
-                <div className={classes.alignLinkCenter}>
-                  <Link className={classes.navLink} to="hero" smooth>Home</Link>
-                  <Link className={classes.navLink} to="about" smooth>About</Link>
-                  <Link className={classes.navLink} to="skills" smooth>Skills</Link>
-                  <Link className={classes.navLink} to="contact" smooth >Contact</Link>
-                </div>
-              </Grid>
-              <Grid item xs={3} className={classes.navButton}>
-                <Box pl={2}>
-                  <Button smooth={true} onClick={() => scrollToSection('contact')} variant="contained">Hire Me</Button>
-                </Box>
-              </Grid>
-            </Grid>
-          </Toolbar>
-          <section className={classes.alignHeight}>
+          <AppBar className={classes.Nav}>
+            <Container>
+              <Toolbar  sx={{ padding: '24px', }}>
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                  <CardMedia className={classes.logo}
+                    component="img"
+                    image= {logo}
+                    alt={logo}
+                  />
+                  </Grid>
+                  <Grid m={'auto'} item xs={6}>
+                    <div className={classes.alignLinkCenter}>
+                      <Link className={classes.navLink} to="hero" smooth>Home</Link>
+                      <Link className={classes.navLink} to="about" smooth>About</Link>
+                      <Link className={classes.navLink} to="skills" smooth>Skills</Link>
+                      <Link className={classes.navLink} to="contact" smooth >Contact</Link>
+                    </div>
+                  </Grid>
+                  <Grid item xs={3} className={classes.navButton}>
+                    <Box pl={2}>
+                      <Button smooth={true} onClick={() => scrollToSection('contact')} variant="contained">Hire Me</Button>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Toolbar>
+            </Container>
+          </AppBar>
+          <section id = 'hero' className={classes.alignHeight}>
               <Grid container > 
                 <Grid item xs={12} sm={12} md={6} lg={6} xl={6}> 
                   <Box  pt={5} pb={5} >
@@ -169,16 +173,16 @@ export default function App() {
             </Grid>
           </section>
           <section id='skills' className={classes.alignHeight} pt={5} pb={5}>
-            <Box>
-              <Typography p={2} mt={3} variant="h2">Skills In Tech</Typography>
+            <Box pl={3}>
+              <Typography mt={3} variant="h2">Skills In Tech</Typography>
               <Grid pt={3} pb={3} container spacing={2}>
                 {gridItems}
               </Grid>
             </Box>
           </section>
           <section name="contact" id="contact" className={classes.alignHeight} pt={5} pb={5}>
-            <Box pt={3} pl={5}> 
-            <Typography variant="h2">Contact</Typography>
+            <Box pl={3} pt={3}> 
+              <Typography variant="h2">Contact</Typography>
               <Typography mb={3} textAlign='center' variant='h4'>Get in touch{'\u{1F44B}'}</Typography>
               <Grid className={classes.alignCenter} container spacing={2}>
                 <Grid p={2} item xs={4}>
@@ -214,12 +218,10 @@ export default function App() {
                 </Grid>
                 
               </Grid>
-              
-              {/* <Typography>{''}saravananaks97@gmail.com</Typography> */}
-              {/* <Typography>+919487013219</Typography> */}
             </Box>
           </section>  
-          <Box  pt={5} pb={5} className={classes.footer}>
+        </Container>
+        <Box pt={5} pb={5} className={classes.footer}>
             <Box>
               <a className={classes.footerLink} target="blank" href='https://github.com/saravanan-SM'><GitHubIcon color="action" /></a>
               <a className={classes.footerLink} target="blank" href='https://linkedin.com/in/saravanan-aks'><LinkedInIcon color="action" /></a>
@@ -232,7 +234,6 @@ export default function App() {
               Created with ❤️ using {'\u{1F44B}'} React and Material-UI
             </Typography> */}
           </Box>
-        </Container>
     </ThemeProvider>
   );  
 };

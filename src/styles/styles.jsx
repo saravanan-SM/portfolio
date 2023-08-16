@@ -5,6 +5,11 @@ export const useStyles = makeStyles(( theme ) => ({
     width: '45px !important',
     height: '45px',
   },
+  Nav: {
+    backgroundImage: 'None !important',
+    boxShadow: 'none !important',
+    borderBottom: '2px solid #1d1c1c' 
+  },
   roundedMedia: {
     borderRadius: '50%',
     backgroundColor: '#1ed760',
@@ -12,9 +17,11 @@ export const useStyles = makeStyles(( theme ) => ({
     height: '400px',
   },
   alignHeight: {
-    minHeight: 'calc(100vh - 90px)',
+    minHeight: 'calc(100vh - 95px)',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative',
+    top: '95px'
   },
   alignCenter: {
     display: 'flex',
@@ -75,7 +82,14 @@ export const useStyles = makeStyles(( theme ) => ({
     borderTop: '2px solid #1d1c1c'
   },
   footerLink: {
-    padding: '0px 20px'
+    margin: '15px',
+    textDecoration: 'none',
+    color: 'inherit',
+    '&:hover': {
+      cursor: 'pointer',
+      color: '#1ed760',
+      textDecoration: 'none',
+    },
   },
   contactCard: {
     padding: '20px',
