@@ -30,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/saravanan-SM/saravanan-SM.github.io/portfolio",
+  "homepage": "https://github.com/saravanan-SM/saravanan-SM.github.io",
   "eslintConfig": {
     "extends": [
       "react-app",
