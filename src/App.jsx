@@ -109,7 +109,7 @@ export default function App() {
         <Container maxWidth='lg' >
           <AppBar className={classes.Nav}>
             <Container sx={{ borderBottom: '2px solid #1d1c1c' }}>
-              <Toolbar  sx={{ padding: '24px',   }}>
+              <Toolbar  sx={{ padding: isSmallScreen ? '24px 0px' : '24px' }}>
                 <Grid container spacing={2}>
                   <Grid item xs={2} sm={2} md={3}>
                   <CardMedia className={classes.logo}
@@ -135,13 +135,13 @@ export default function App() {
               </Toolbar>
             </Container>
           </AppBar>
-          <section id = 'hero' className={classes.alignHeight}>
+          <section id = 'hero' className={`${isSmallScreen ? '' : classes.alignHeight}`}>
               <Grid container > 
                 <Grid item xs={12} sm={12} md={4} lg={6} xl={6}> 
                   <Box  pt={5} pb={5} >
                     <CardContent  p={5}>
-                      <Typography variant='h2' sx={{ fontSize: isSmallScreen ? '40px' : '60px',}}>Hi Folks,{'\u{1F44B}'}</Typography>
-                      <Typography mb={2} variant='h2' sx={{ fontSize: isSmallScreen ? '40px' : '60px',}}>I'm Saravanan</Typography>
+                      <Typography variant='h2' sx={{ fontSize: isSmallScreen ? '40px' : '60px', fontWeight: isSmallScreen ? 'bold' : '300'}}>Hi Folks,{'\u{1F44B}'}</Typography>
+                      <Typography mb={2} variant='h2' sx={{ fontSize: isSmallScreen ? '40px' : '60px', fontWeight: isSmallScreen ? 'bold' : '300'}}>I'm Saravanan</Typography>
                       <Typography className={classes.cardContent} variant='h6' sx={{ fontWeight: isSmallScreen ? '400' : '500',}}>Full stack Software Engineer based in chennai, India.</Typography>
                       <Typography className={classes.cardContent} variant='h6' sx={{ fontWeight: isSmallScreen ? '400' : '500',}}>I have 2.5 years experience on React and Nodejs.</Typography>
                       <Box className={classes.alignLeft} pt={2}>
@@ -165,7 +165,7 @@ export default function App() {
           <section id='about' className={classes.alignHeight} pt={5} pb={5}>
             <Grid container spacing={2}> 
               <Grid item xs={12}>
-                <Typography p={2} mt={3} variant="h2" sx={{ fontSize: isSmallScreen ? '40px' : '60px',}}>About</Typography>
+                <Typography p={2} mt={3} variant="h2" sx={{ fontSize: isSmallScreen ? '40px' : '60px', fontWeight: isSmallScreen ? 'bold' : '300'}}>About</Typography>
                 <Typography pl={2} pr={2} mt={2} variant='h6' sx={{ fontWeight: isSmallScreen ? '400' : '500', fontSize: isSmallScreen ? '16px' : '20px', }}>{'\u{1F4BB}'} - My career was starting Intern to a Full-time Mern stack developer of web development.</Typography>
                 <Typography pl={2} pr={2} mt={2} variant='h6' sx={{ fontWeight: isSmallScreen ? '400' : '500', fontSize: isSmallScreen ? '16px' : '20px', }}>{'\u{1F4B0}'} - Apart from coding, I know about stocks & commodity markets and digitalized currencies like crypto trading and collaborate with stock market enthusiast peoples.</Typography>
                 <Typography pl={2} pr={2} mt={2} variant='h6' sx={{ fontWeight: isSmallScreen ? '400' : '500', fontSize: isSmallScreen ? '16px' : '20px', }}>{'\u{1F3AF}'} - My expertise is the next level of build-to-own product AI usings to market analysis on daily basis.</Typography>
@@ -177,7 +177,7 @@ export default function App() {
           </section>
           <section id='skills' className={classes.alignHeight} pt={5} pb={5}>
             <Box pl={3}>
-              <Typography mt={3} variant="h2" sx={{ fontSize: isSmallScreen ? '40px' : '60px',}}>Skills In Tech</Typography>
+              <Typography mt={3} variant="h2" sx={{ fontSize: isSmallScreen ? '40px' : '60px', fontWeight: isSmallScreen ? 'bold' : '300'}}>Skills In Tech</Typography>
               <Grid pt={3} pb={3} container spacing={2}>
                 {gridItems}
               </Grid>
@@ -185,8 +185,8 @@ export default function App() {
           </section>
           <section name="contact" id="contact" className={classes.alignHeight} pt={5} pb={5}>
             <Box pl={3} pt={3}> 
-              <Typography variant="h2" sx={{ fontSize: isSmallScreen ? '40px' : '60px',}}>Contact</Typography>
-              <Typography mb={3} textAlign='center' variant='h4' sx={{ fontSize: isSmallScreen ? '24px' : '34px',}}>Get in touch{'\u{1F44B}'}</Typography>
+              <Typography variant="h2" sx={{ fontSize: isSmallScreen ? '40px' : '60px', fontWeight: isSmallScreen ? 'bold' : '300'}}>Contact</Typography>
+              <Typography mb={3} textAlign='center' variant='h4' sx={{ fontSize: isSmallScreen ? '24px' : '34px', paddingTop: isSmallScreen ? '20px' : ''}}>Get in touch{'\u{1F44B}'}</Typography>
               <Grid className={classes.alignCenter} container spacing={2}>
                 <Grid p={2} item xs={12} sm={12} md={6} lg={4}>
                   <Card className={classes.contactCard}>
