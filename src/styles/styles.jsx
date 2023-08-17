@@ -16,6 +16,12 @@ export const useStyles = makeStyles(( theme ) => ({
     width: '400px !important',
     height: '400px',
   },
+  smallroundedMedia: {
+    borderRadius: '25%',
+    backgroundColor: '#1ed760',
+    width: '300px !important',
+    height: '300px',
+  },
   alignHeight: {
     minHeight: 'calc(100vh - 95px)',
     display: 'flex',
