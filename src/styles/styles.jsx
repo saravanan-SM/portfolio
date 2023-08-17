@@ -32,7 +32,6 @@ export const useStyles = makeStyles(( theme ) => ({
     alignItems: 'center'
   },
   navButton: {
-    display: 'flex',
     justifyContent: 'end'
   },
   cardContent:{
